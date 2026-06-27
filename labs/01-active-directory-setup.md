@@ -79,6 +79,7 @@ I opened **Active Directory Users and Computers** from the Tools menu in Server 
 | Computers | Machine accounts for domain joined computers |
 | Domain Controllers | Lists all domain controllers in the domain |
 | ForeignSecurityPrincipals | Accounts from external trusted domains |
+| Managed Service Accounts | Stores managed service accounts used by applications and services to run under specific permissions |
 | Users | Default user accounts and security groups |
 
 ## Result
