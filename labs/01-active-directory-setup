@@ -85,6 +85,4 @@ I opened **Active Directory Users and Computers** from the Tools menu in Server 
 
 The server is now a fully functioning domain controller for the `support.local` domain. Active Directory is installed and verified. This environment is ready for the next lab.
 
----
 
-Copy that into your `01-active-directory-setup` file on GitHub and commit it.
