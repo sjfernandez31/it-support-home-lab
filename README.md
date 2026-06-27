@@ -20,8 +20,8 @@ The goal of this lab is to build practical experience with the tools and tasks t
 
 | # | Lab | Status |
 |---|---|---|
-| 01 | Active Directory Setup | In Progress |
-| 02 | User and Group Management | Pending |
+| 01 | Active Directory Setup | Complete |
+| 02 | User and Group Management | In Progress |
 | 03 | Join Client to Domain | Pending |
 | 04 | Group Policy | Pending |
 | 05 | DNS and DHCP | Pending |
