@@ -54,3 +54,11 @@
 ![A+](https://img.shields.io/badge/CompTIA-A%2B-FF0000?style=for-the-badge)
 ![Network+](https://img.shields.io/badge/CompTIA-Network%2B-FF0000?style=for-the-badge)
 ![ITIL](https://img.shields.io/badge/ITIL-4%20Foundation-purple?style=for-the-badge)
+
+---
+
+<div align="center">
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Steven%20Fernandez-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/stevenjfernandez31)
+
+</div>
