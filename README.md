@@ -30,7 +30,7 @@
 |---|---|---|
 | 01 | [Active Directory Setup](labs/01-active-directory-setup/README.md) | ✅ Complete |
 | 02 | [User and Group Management](labs/02-user-group-management/README.md) | ✅ Complete |
-| 03 | [Join Client to Domain](labs/03-domain-join-client/README.md) | 🔄 Pending |
+| 03 | [Join Client to Domain](labs/03-domain-join-client/README.md) | ✅ Complete |
 | 04 | [Group Policy](labs/04-group-policy/README.md) | 🔄 Pending |
 | 05 | [DNS and DHCP](labs/05-dns-dhcp/README.md) | 🔄 Pending |
 | 06 | [File Shares and Permissions](labs/06-file-shares-permissions/README.md) | 🔄 Pending |
