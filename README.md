@@ -32,7 +32,7 @@
 | 02 | [User and Group Management](labs/02-user-group-management/README.md) | ✅ Complete |
 | 03 | [Join Client to Domain](labs/03-domain-join-client/README.md) | ✅ Complete |
 | 04 | [Group Policy](labs/04-group-policy/README.md) | ✅ Complete |
-| 05 | [DNS and DHCP](labs/05-dns-dhcp/README.md) | 🔄 Pending |
+| 05 | [DNS and DHCP](labs/05-dns-dhcp/README.md) | ✅ Complete |
 | 06 | [File Shares and Permissions](labs/06-file-shares-permissions/README.md) | 🔄 Pending |
 | 07 | [Remote Support](labs/07-remote-support/README.md) | 🔄 Pending |
 | 08 | [osTicket Setup](labs/08-osticket-setup/README.md) | 🔄 Pending |
