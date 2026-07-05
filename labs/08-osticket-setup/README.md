@@ -50,7 +50,7 @@ I downloaded XAMPP from `https://www.apachefriends.org` directly on the server a
 
 ### Step 3 — Resolve the Port 80 Conflict and Start XAMPP Services
 
-I opened the XAMPP control panel and clicked **Start** next to Apache. The attempt failed because IIS was already bound to port 80. I stopped IIS by running the following command in PowerShell:
+I opened the XAMPP control panel and clicked **Start** next to Apache. The attempt failed and the log reported port 80 in use, with a note that Apache would not start without the configured ports free. IIS was still bound to port 80 from Step 1, so I stopped it by running the following command in PowerShell:
 
 ```
 Stop-Service W3SVC
@@ -68,7 +68,7 @@ I opened the browser on the server and navigated to:
 http://localhost
 ```
 
-The Apache welcome page loaded confirming that XAMPP was now serving requests on port 80.
+After stopping IIS and starting Apache through XAMPP, the page confirmed Apache was now serving requests on port 80.
 
 ---
 
@@ -92,7 +92,7 @@ In phpMyAdmin I clicked **New** in the left panel, entered `osticket` as the dat
 
 ### Step 7 — Download and Extract osTicket
 
-I downloaded osTicket v1.18.4 from `https://osticket.com/download` after temporarily switching the network adapter to NAT again. After switching back to LAN Network I extracted the zip file and copied the contents of the `upload` folder into:
+I downloaded osTicket v1.18.4 from `https://osticket.com/download` after temporarily switching to NAT again. After switching back to LAN Network I extracted the zip file and copied the contents of the `upload` folder into:
 
 ```
 C:\xampp\htdocs\osticket\osTicket-v1.18.4\upload
@@ -114,13 +114,7 @@ I renamed `ost-sampleconfig.php` to `ost-config.php` so the osTicket installer c
 
 ### Step 9 — Enable the mysqli PHP Extension
 
-The osTicket installer was failing with a PHP fatal error related to mysqli. I opened the XAMPP control panel, clicked **Config** next to Apache, and opened `php.ini`. I searched for:
-
-```
-extension=mysqli
-```
-
-I removed the semicolon at the beginning of the line to enable the extension, saved the file, and restarted Apache. The mysqli error was resolved.
+The osTicket installer was failing with a PHP fatal error related to mysqli. I opened the XAMPP control panel, clicked **Config** next to Apache, and opened `php.ini`. I searched for `extension=mysqli` and removed the semicolon at the beginning of the line to enable it. I restarted Apache and the mysqli error was resolved.
 
 ---
 
@@ -212,12 +206,12 @@ XAMPP was installed and configured on Windows Server 2022 with Apache and MySQL 
 | ![IIS Installing](screenshots/Lab_08-1.png) | IIS Web Server role installation in progress |
 | ![IIS in Server Manager](screenshots/Lab_08-2.png) | IIS showing in Server Manager after installation |
 | ![IIS Welcome Page](screenshots/Lab_08-3.png) | IIS default welcome page confirming the web server is running |
-| ![Port 80 Conflict](screenshots/Lab_08-4.png) | XAMPP control panel showing Apache failing to start due to port 80 conflict with IIS |
+| ![Port 80 Conflict](screenshots/Lab_08-4.png) | XAMPP control panel showing Apache failing to start due to port 80 being in use by IIS |
 | ![XAMPP Running](screenshots/Lab_08-5.png) | XAMPP control panel showing Apache and MySQL running green after stopping IIS |
 | ![phpMyAdmin](screenshots/Lab_08-6.png) | phpMyAdmin dashboard confirming database access |
 | ![osTicket Installer](screenshots/Lab_08-7.png) | osTicket installer page loading in the browser |
-| ![Install Form](screenshots/Lab_08-8.png) | osTicket installation form filled out with helpdesk and database details |
-| ![Installing](screenshots/Lab_08-9.png) | osTicket installation running |
+| ![Install Form Blank](screenshots/Lab_08-8.png) | osTicket installation form before entering details |
+| ![Install Form Filled](screenshots/Lab_08-9.png) | osTicket installation form filled out with helpdesk name and admin user details |
 | ![Installation Complete](screenshots/Lab_08-10.png) | osTicket congratulations page confirming successful installation |
 | ![Support Center Portal](screenshots/Lab_08-11.png) | osTicket customer portal showing the Support Center welcome page |
 | ![New Ticket Form](screenshots/Lab_08-12.png) | New ticket submission form filled out with test ticket details |
