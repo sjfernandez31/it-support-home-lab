@@ -50,8 +50,11 @@ I downloaded XAMPP from `https://www.apachefriends.org` directly on the server a
 
 ### Step 3 — Resolve the Port 80 Conflict and Start XAMPP Services
 
-I opened the XAMPP control panel and clicked **Start** next to Apache. The attempt failed and the log reported port 80 in use, with a note that Apache would not start without the configured ports free. IIS was still bound to port 80 from Step 1, so I stopped it by running the following command in PowerShell:
+I opened the XAMPP control panel and clicked **Start** next to Apache. The attempt failed because IIS was already bound to port 80. I stopped IIS by running the following command in PowerShell:
+
+```
 Stop-Service W3SVC
+```
 
 I then went back to the XAMPP control panel and clicked **Start** next to both **Apache** and **MySQL**. Both services started successfully and showed green in the control panel.
 
@@ -59,13 +62,25 @@ I then went back to the XAMPP control panel and clicked **Start** next to both *
 
 ### Step 4 — Verify Apache Is Running
 
-I opened the browser on the server and navigated to `http://localhost`. The IIS default welcome page confirmed the web server was running. After stopping IIS and starting Apache through XAMPP, navigating to `http://localhost` confirmed Apache was now serving requests.
+I opened the browser on the server and navigated to:
+
+```
+http://localhost
+```
+
+The Apache welcome page loaded confirming that XAMPP was now serving requests on port 80.
 
 ---
 
 ### Step 5 — Access phpMyAdmin
 
-I navigated to `http://localhost/phpmyadmin` in the browser. phpMyAdmin loaded successfully showing the database server information and confirming that MySQL was running and accessible.
+I navigated to:
+
+```
+http://localhost/phpmyadmin
+```
+
+phpMyAdmin loaded successfully showing the database server information and confirming that MySQL was running and accessible.
 
 ---
 
@@ -77,15 +92,21 @@ In phpMyAdmin I clicked **New** in the left panel, entered `osticket` as the dat
 
 ### Step 7 — Download and Extract osTicket
 
-I downloaded osTicket v1.18.4 from `https://osticket.com/download` after temporarily switching to NAT again. After switching back to LAN Network I extracted the zip file and copied the contents of the `upload` folder into:
+I downloaded osTicket v1.18.4 from `https://osticket.com/download` after temporarily switching the network adapter to NAT again. After switching back to LAN Network I extracted the zip file and copied the contents of the `upload` folder into:
+
+```
 C:\xampp\htdocs\osticket\osTicket-v1.18.4\upload
+```
 
 ---
 
 ### Step 8 — Rename the Config File
 
 I navigated to:
+
+```
 C:\xampp\htdocs\osticket\osTicket-v1.18.4\upload\include
+```
 
 I renamed `ost-sampleconfig.php` to `ost-config.php` so the osTicket installer could find and write to it.
 
@@ -93,14 +114,23 @@ I renamed `ost-sampleconfig.php` to `ost-config.php` so the osTicket installer c
 
 ### Step 9 — Enable the mysqli PHP Extension
 
-The osTicket installer was failing with a PHP fatal error related to mysqli. I opened the XAMPP control panel, clicked **Config** next to Apache, and opened `php.ini`. I searched for `extension=mysqli` and removed the semicolon at the beginning of the line to enable it. I restarted Apache and confirmed on the installer prerequisites page that the MySQLi extension now showed as loaded.
+The osTicket installer was failing with a PHP fatal error related to mysqli. I opened the XAMPP control panel, clicked **Config** next to Apache, and opened `php.ini`. I searched for:
+
+```
+extension=mysqli
+```
+
+I removed the semicolon at the beginning of the line to enable the extension, saved the file, and restarted Apache. The mysqli error was resolved.
 
 ---
 
 ### Step 10 — Run the osTicket Installer
 
 I navigated to:
+
+```
 http://localhost/osticket/osTicket-v1.18.4/upload/setup/install.php
+```
 
 I filled in the installation form with the following details:
 
@@ -121,19 +151,25 @@ I clicked **Install Now** and the installation completed successfully.
 
 ### Step 11 — Post Installation Cleanup
 
-After installation I completed the two required cleanup steps:
+After installation I completed the two required cleanup steps.
 
 I navigated to the include folder and removed write access from `ost-config.php` by opening its Security properties and unchecking Write for the Everyone group.
 
 I then deleted the setup folder from:
+
+```
 C:\xampp\htdocs\osticket\osTicket-v1.18.4\upload
+```
 
 ---
 
 ### Step 12 — Verify the Customer Portal
 
 I navigated to:
+
+```
 http://localhost/osticket/osTicket-v1.18.4/upload
+```
 
 The osTicket Support Center welcome page loaded confirming the installation was successful and the portal was accessible.
 
@@ -142,7 +178,10 @@ The osTicket Support Center welcome page loaded confirming the installation was 
 ### Step 13 — Log Into the Staff Panel
 
 I navigated to:
+
+```
 http://localhost/osticket/osTicket-v1.18.4/upload/scp
+```
 
 I logged in with the admin credentials set during installation. The staff dashboard loaded successfully.
 
@@ -150,7 +189,7 @@ I logged in with the admin credentials set during installation. The staff dashbo
 
 ### Step 14 — Submit a Test Ticket
 
-From the customer portal I clicked **Open a New Ticket** and filled in the submission form. I disabled email validation in the Admin Panel under Emails to allow the ticket to be submitted without a live mail server. The ticket was submitted and confirmed with a ticket number.
+From the customer portal I clicked **Open a New Ticket** and filled in the submission form. I disabled email validation in the Admin Panel under Emails to allow the ticket to be submitted without a live mail server. The ticket was submitted successfully and a confirmation with a ticket number was displayed.
 
 ---
 
@@ -173,12 +212,12 @@ XAMPP was installed and configured on Windows Server 2022 with Apache and MySQL 
 | ![IIS Installing](screenshots/Lab_08-1.png) | IIS Web Server role installation in progress |
 | ![IIS in Server Manager](screenshots/Lab_08-2.png) | IIS showing in Server Manager after installation |
 | ![IIS Welcome Page](screenshots/Lab_08-3.png) | IIS default welcome page confirming the web server is running |
-| ![Port 80 Conflict](screenshots/Lab_08-4.png) | XAMPP control panel showing Apache failing to start due to port 80 being in use by IIS |
+| ![Port 80 Conflict](screenshots/Lab_08-4.png) | XAMPP control panel showing Apache failing to start due to port 80 conflict with IIS |
 | ![XAMPP Running](screenshots/Lab_08-5.png) | XAMPP control panel showing Apache and MySQL running green after stopping IIS |
 | ![phpMyAdmin](screenshots/Lab_08-6.png) | phpMyAdmin dashboard confirming database access |
-| ![osTicket Installer](screenshots/Lab_08-7.png) | osTicket installer prerequisites page confirming the MySQLi extension is loaded |
-| ![Install Form Blank](screenshots/Lab_08-8.png) | osTicket installation form before entering details |
-| ![Install Form Filled](screenshots/Lab_08-9.png) | osTicket installation form filled out with helpdesk name and admin user details |
+| ![osTicket Installer](screenshots/Lab_08-7.png) | osTicket installer page loading in the browser |
+| ![Install Form](screenshots/Lab_08-8.png) | osTicket installation form filled out with helpdesk and database details |
+| ![Installing](screenshots/Lab_08-9.png) | osTicket installation running |
 | ![Installation Complete](screenshots/Lab_08-10.png) | osTicket congratulations page confirming successful installation |
 | ![Support Center Portal](screenshots/Lab_08-11.png) | osTicket customer portal showing the Support Center welcome page |
 | ![New Ticket Form](screenshots/Lab_08-12.png) | New ticket submission form filled out with test ticket details |
