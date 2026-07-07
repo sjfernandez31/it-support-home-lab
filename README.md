@@ -36,7 +36,7 @@
 | 06 | [File Shares and Permissions](labs/06-file-shares-permissions/README.md) | ✅ Complete |
 | 07 | [Remote Support](labs/07-remote-support/README.md) | ✅ Complete |
 | 08 | [osTicket Setup](labs/08-osticket-setup/README.md) | ✅ Complete |
-| 09 | [Event Viewer and Logs](labs/09-event-viewer-logs/README.md) | 🔄 Pending |
+| 09 | [Event Viewer and Logs](labs/09-event-viewer-logs/README.md) | ✅ Complete |
 | 10 | [Password Reset and Account Unlock](labs/10-password-reset-account-unlock/README.md) | 🔄 Pending |
 
 ---
