@@ -8,7 +8,7 @@
 ![OS](https://img.shields.io/badge/OS-Windows%20Server%202022-0078D4?style=for-the-badge&logo=windows)
 
 > **A hands-on IT support and helpdesk home lab built to simulate real world enterprise environments.**
-> Each lab covers a task that a helpdesk technician or IT support specialist encounters on the job — documented step by step so anyone can follow along and learn.
+> Each lab covers a task that a helpdesk technician or IT support specialist encounters on the job, documented step by step so anyone can follow along and learn.
 
 </div>
 
