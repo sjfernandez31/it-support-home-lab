@@ -1,31 +1,21 @@
 <div align="center">
-
 # 🖥️ IT SUPPORT HOME LAB
-
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)
 ![Labs](https://img.shields.io/badge/Labs-10-blue?style=for-the-badge)
 ![Platform](https://img.shields.io/badge/Platform-VMware%20%7C%20VirtualBox-informational?style=for-the-badge)
 ![OS](https://img.shields.io/badge/OS-Windows%20Server%202022-0078D4?style=for-the-badge&logo=windows)
-
 > **A hands-on IT support and helpdesk home lab built to simulate real world enterprise environments.**
 > Each lab covers a task that a helpdesk technician or IT support specialist encounters on the job, documented step by step so anyone can follow along and learn.
-
 </div>
-
 ---
-
 ## 🖥️ Lab Environment
-
 | Component | Platform | Role |
 |---|---|---|
 | Windows Server 2022 | VMware Workstation Pro | Domain Controller, DNS, DHCP |
 | Windows 10 | VirtualBox | Domain joined client workstation |
 | osTicket | Self hosted | Helpdesk ticketing system |
-
 ---
-
 ## 🗂️ Labs
-
 | # | Lab | Status |
 |---|---|---|
 | 01 | [Active Directory Setup](labs/01-active-directory-setup/README.md) | ✅ Complete |
@@ -38,27 +28,19 @@
 | 08 | [osTicket Setup](labs/08-osticket-setup/README.md) | ✅ Complete |
 | 09 | [Event Viewer and Logs](labs/09-event-viewer-logs/README.md) | ✅ Complete |
 | 10 | [Password Reset and Account Unlock](labs/10-password-reset-account-unlock/README.md) | ✅ Complete |
-
+| 11 | Backup and Restore | ⏳ Pending |
+| 12 | Printer Deployment and Troubleshooting | ⏳ Pending |
 ---
-
 ## 🎯 Goals
-
 - Simulate a real enterprise IT support environment from scratch
 - Build hands-on experience with tools used daily in helpdesk roles
 - Document every step so the lab serves as a learning resource for others
-
 ---
-
 ## 🏅 Certifications This Lab Supports
-
 ![A+](https://img.shields.io/badge/CompTIA-A%2B-FF0000?style=for-the-badge)
 ![Network+](https://img.shields.io/badge/CompTIA-Network%2B-FF0000?style=for-the-badge)
 ![ITIL](https://img.shields.io/badge/ITIL-4%20Foundation-purple?style=for-the-badge)
-
 ---
-
 <div align="center">
-
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Steven%20Fernandez-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/stevenjfernandez31)
-
 </div>
